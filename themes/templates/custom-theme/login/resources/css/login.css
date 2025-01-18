@@ -5,6 +5,13 @@
   --company-color: #0c2f4d;
 }
 
+.login_custom-logo {
+  background-image: url(../img/datasette.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 30%;
+}
+
 .login-pf {
   background: linear-gradient(
         90deg,
@@ -520,7 +527,12 @@ ul#kc-totp-supported-apps {
 
 .card-pf {
   margin-inline: auto;
-  box-shadow: var(--pf-global--BoxShadow--lg);
+  background: linear-gradient(
+    220deg,
+    rgb(239 246 252) 50%,
+    rgba(31, 101, 160, 0) 100%
+  );
+  box-shadow: none;
   border-radius: 10px;
   padding: 0 20px;
   max-width: 500px;
@@ -634,11 +646,11 @@ ul#kc-totp-supported-apps {
 /* End Recovery codes */
 
 .login-password_forgo-area {
-    margin-block-start: 5%;
-    text-align: center;
+  margin-block-start: 5%;
+  text-align: center;
 }
 
 .login-register_back-icon {
-    margin-block: 5%;
-    font-size: 1.2rem;
+  margin-block: 5%;
+  font-size: 1.2rem;
 }

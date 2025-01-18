@@ -31,27 +31,85 @@ If we access the Admin panel our theme already in there, to see the them we can 
 To change any aspect of the screen we need just see the correspondent class in the template and change it in the [login.css](./templates/custom-theme/login/resources/css/login.css) file, to change the background, for instance, change the class `.login-pf` adding the following code:
 
 ```css
-background: linear-gradient(
-      90deg,
-      hsl(356 0% 97%) calc(20px - 2px),
-      transparent 1%
-    ) center, linear-gradient(hsl(356 0% 97%) calc(20px - 2px), transparent 1%) center,
-  hsl(207.69deg 73.03% 17.45%);
-background-size: 20px 20px;
-background-attachment: fixed;
+.login-pf {
+  background: linear-gradient(
+        90deg,
+        hsl(356 0% 97%) calc(20px - 2px),
+        transparent 1%
+      ) center, linear-gradient(
+        hsl(356 0% 97%) calc(20px - 2px),
+        transparent 1%
+      ) center, hsl(207.69deg 73.03% 17.45%);
+  background-size: 20px 20px;
+  background-attachment: fixed;
+}
 ```
 
 This will apply a doted background in the entire page, in the same way add the following tin the `.login-pf body` class
 
 ```css
-height: 100%;
-background: linear-gradient(
-  220deg,
-  rgb(239 246 252) 50%,
-  rgba(31, 101, 160, 0) 100%
-);
-margin: 0;
+.login-pf body {
+  height: 100%;
+  background: linear-gradient(
+    220deg,
+    rgb(239 246 252) 50%,
+    rgba(31, 101, 160, 0) 100%
+  );
+  margin: 0;
+}
 ```
-We just applied a background gradient over the dotted lines, if you already has applied the theme in the Realm you already can see the changes, go to clients and access the login from any of them
+
+We just applied a background gradient over the dotted lines. If you already has applied the theme in the Realm you already can see the changes, go to clients and access the login from any of them.
 
 ![Theme login screen](./images/theme_login_screen.png)
+
+We do not want the Realm name nor the "Sign in to your account" phrase, todo so create a file `message_<LANG>.properties` inside a `messages` folde, always inner the login theme folder.
+
+Ex.: `messages/messages_en.properties`
+
+After that add the following content:
+
+```properties
+loginTitle=Custom Theme Login
+loginTitleHtml=
+loginAccountTitle=
+```
+
+This will change the title of HTML page and remove the Real and and the "Sign in to your account" as we want, now we can put some logo to our screen, todo so, let's create a folder `img` inside resources foldes and add some logo to it, for this guide we will use the [datasette](https://datasette.io/) logo, to not get all `template.ftl` file with all they need to work, lets add the logo by CSS starting by creating a new classe in the [login.css](./templates/custom-theme/login/resources/css/login.css) file:
+
+```css
+.login_custom-logo {
+  background-image: url(../img/datasette.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 30%;
+}
+```
+
+We can change the the card of the form too, you can put the next css to apply it.
+
+```css
+.card-pf {
+  margin-inline: auto;
+  background: linear-gradient(
+    220deg,
+    rgb(239 246 252) 50%,
+    rgba(31, 101, 160, 0) 100%
+  );
+  box-shadow: none;
+  border-radius: 10px;
+  padding: 0 20px;
+  max-width: 500px;
+}
+```
+
+After that add the following to [theme.properties](./templates/custom-theme/login/theme.properties) `kcHeaderWrapperClass=login_custom-logo` after that update the login screen in the browser and see the logo there.
+
+## Summary
+You can change change everything from the Admin screen to Email templates, to do so it is recommended copy the necessaries files from the base theme of the keycloak, this way you can see all the interactions and screens.
+
+To see more about it you can access these materials:
+
+1. [Keycloak Theme Docs](https://www.keycloak.org/docs/latest/server_development/#_themes)
+2. [Apache FreeMarker](https://freemarker.apache.org/index.html)
+3. [Repository](https://github.com/keycloak/keycloak/tree/archive/release/25.0/themes)
