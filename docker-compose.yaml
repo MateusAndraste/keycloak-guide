@@ -2,11 +2,12 @@ services:
   keycloak:
     image: quay.io/keycloak/keycloak:24.0.5
     container_name: keycloak
-    command: start-dev -Dkeycloak.profile.feature.upload_scripts=enabled
+    command: start-dev -Dkeycloak.profile.feature.upload_scripts=enabled -Dkeycloak.theme.cacheThemes=false
     env_file:
       - ./keycloak.env
     volumes:
       - ./config/db:/opt/keycloak/data
+      - ./themes/templates:/opt/keycloak/themes
     ports:
       - 8080:8080
 
