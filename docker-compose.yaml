@@ -8,6 +8,15 @@ services:
     volumes:
       - ./config/db:/opt/keycloak/data
       - ./themes/templates:/opt/keycloak/themes
+      - ./mfa/plugins:/opt/keycloak/providers
     ports:
       - 8080:8080
+  smtp:
+    image: rnwood/smtp4dev:v3
+    restart: always
+    container_name: smtp4dev
+    ports:
+      - "8081:80"
+      - "8025:25"
+      - "8143:143"
 
