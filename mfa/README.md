@@ -73,4 +73,5 @@ This is the configuration need it, now scroll to top of the screen click on the 
 
 
 Let's create a new user and see the flow in action
+![MFA email OTP config](./images/mfa_otp_email_config.gif)
 

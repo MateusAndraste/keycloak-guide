@@ -8,6 +8,9 @@ Feel free to navigate and explore the repository, here we make available a [dock
 ## Chapters
 
 1. [Realms](./realms)
+2. [Clients](./clients)
+3. [Themes](./themes)
+4. [MFA](./mfa)
 
 ## Tips
 
