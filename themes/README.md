@@ -1,6 +1,6 @@
 # Adding Themes
 
-Focusing on a corporative way we can personalizade the screens and e-mail from Keycloak though themes, that way you can create fancy screens and even apply the Design System from a company.
+Focusing on a corporative way we can personalizade the screens and email from Keycloak though themes, that way you can create fancy screens and even apply the Design System from a company.
 
 You can readmore about themes [here](https://www.keycloak.org/docs/latest/server_development/#_themes).
 
