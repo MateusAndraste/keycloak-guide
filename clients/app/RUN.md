@@ -6,7 +6,7 @@ To run this example you can user the docker file present here, we will use Node 
 
 1. Run the container through the docker compose file using the `docker compose up -d`
 2. Install dependencies `docker compose exec app npm i`
-3. Then run the application `docker compose exec app npm run start`
+3. Then run the application `docker compose exec app npm run dev`
 
 > :exclamation: This is an approach for developer only, do not use in production
 
